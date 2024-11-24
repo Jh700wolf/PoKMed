@@ -53,9 +53,9 @@ fig, ax = plt.subplots()
 # Colores según las condiciones
 for i in range(len(df) - 1):  # Iterar sobre los puntos
     # Determinar el color del punto
-    if df['valor'].iloc[i] > 29:  # Ajustar a tus valores
+    if df['valor'].iloc[i] > 26:  # Ajustar a tus valores
         color = 'red'
-    elif df['valor'].iloc[i] < 26:
+    elif df['valor'].iloc[i] < 2:
         color = 'blue'
     else:
         color = 'green'
