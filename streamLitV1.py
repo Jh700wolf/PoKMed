@@ -6,7 +6,9 @@ import matplotlib.pyplot as plt
 
 
 st.title('Bienvenido a PokMed')
-st.subheader('Vamos a verificar como se encuentra tu insulina:')
+st.subheader('Vamos a verificar como se encuentra tu insulina.')
+st.write('Pero primero, por favor dinos quien eres:)
+st.text_input("Your name", key="name")
 
 
 host = "autorack.proxy.rlwy.net"
