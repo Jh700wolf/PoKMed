@@ -11,8 +11,8 @@ st.subheader('Vamos a verificar como se encuentra tu insulina.')
 mensajeBienvenida.write("Pero primero, por favor dinos quien eres:")
 
 
-n = nombreIntro.text_input("Usuario")
-contra = contraIntro.text_input("Usuario")
+n = nombreIntro.text_input("Usuario:")
+contra = contraIntro.text_input("Contraseña:")
 if n == "Jose Pablo" and contra == "222555":
     mensajeBienvenida.empty()
     nombreIntro.empty()
