@@ -44,9 +44,6 @@ if 'timestamp' in df.columns:
 st.subheader("Tabla de datos")
 st.dataframe(df)
 
-
-plt.style.use('dark_background')  # Activa el modo oscuro
-
 # Crear la gráfica con puntos y colores personalizados
 fig, ax = plt.subplots()
 
