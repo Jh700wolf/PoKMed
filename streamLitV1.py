@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 
 st.title('Bienvenido a PokMed')
-st.sunheader('Vamos a verificar como se encuentra tu insulina:')
+st.subheader('Vamos a verificar como se encuentra tu insulina:')
 
 
 host = "autorack.proxy.rlwy.net"
