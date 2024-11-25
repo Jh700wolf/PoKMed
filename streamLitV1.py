@@ -93,7 +93,7 @@ for i in range(len(df) - 1):  # Iterar sobre los puntos
 if df['valor'].iloc[-1] > 29:
     last_color = 'red'
 elif df['valor'].iloc[-1] < 26:
-    last_color = 'blue'
+    last_color = '#4335A7'
 else:
     last_color = 'green'
 
