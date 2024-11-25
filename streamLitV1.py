@@ -8,8 +8,9 @@ import matplotlib.pyplot as plt
 st.title('Bienvenido a PokMed')
 st.subheader('Vamos a verificar como se encuentra tu insulina.')
 st.write('Pero primero, por favor dinos quien eres:')
-n=st.text_input("Nombre")
-if n=="Jose Pablo":
+n=st.text_input("Usuario:")
+contra=st.text_input("Contraseña:")
+if n=="Jose Pablo" and contra == "222555":
     st.subheader(f'Bienvenido {n}')
 
     host = "autorack.proxy.rlwy.net"
