@@ -5,7 +5,8 @@ import matplotlib.pyplot as plt
 
 
 
-st.title('Visualización de datos de sensores')
+st.title('Bienvenido a PokMed')
+st.write('Vamos a verificar como se encuentra tu insulina:')
 
 
 host = "autorack.proxy.rlwy.net"
