@@ -74,12 +74,12 @@ for i in range(len(df) - 1):  # Iterar sobre los puntos
     )
 
     # Determinar el color de la línea según el punto al que conecta
-    if df['valor'].iloc[i + 1] > 29:
-        line_color = 'red'
-    elif df['valor'].iloc[i + 1] < 26:
-        line_color = 'blue'
+    if df['valor'].iloc[i + 1] > 26:
+        line_color = '#FF7F3E'
+    elif df['valor'].iloc[i + 1] < 2:
+        line_color = '#4335A7'
     else:
-        line_color = 'green'
+        line_color = '#80C4E9'
 
     # Graficar la línea hasta el siguiente punto
     ax.plot(
@@ -91,11 +91,11 @@ for i in range(len(df) - 1):  # Iterar sobre los puntos
 
 # Graficar el último punto
 if df['valor'].iloc[-1] > 29:
-    last_color = 'red'
+    last_color = '#FF7F3E'
 elif df['valor'].iloc[-1] < 26:
     last_color = '#4335A7'
 else:
-    last_color = 'green'
+    last_color = '#80C4E9'
 
 ax.scatter(df['timestamp'].iloc[-1], df['valor'].iloc[-1], color=last_color, zorder=3)
 
