@@ -16,6 +16,7 @@ n = nombreIntro.text_input("Usuario:")
 contra = contraIntro.text_input("Contraseña:")
 if n == "Jose Pablo" and contra == "222555":
     mensajeBienvenida.empty()
+    mensajeB2.empty()
     nombreIntro.empty()
     contraIntro.empty()
     st.subheader(f'Bienvenido {n}')
