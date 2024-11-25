@@ -54,11 +54,11 @@ fig, ax = plt.subplots()
 for i in range(len(df) - 1):  # Iterar sobre los puntos
     # Determinar el color del punto
     if df['valor'].iloc[i] > 26:  # Ajustar a tus valores
-        color = 'red'
+        color = '#FF7F3E'
     elif df['valor'].iloc[i] < 2:
-        color = 'blue'
+        color = '#4335A7'
     else:
-        color = 'green'
+        color = '#80C4E9'
 
     # Graficar el punto
     ax.scatter(df['timestamp'].iloc[i], df['valor'].iloc[i], color=color, zorder=3)
