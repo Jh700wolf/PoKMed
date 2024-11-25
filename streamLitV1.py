@@ -5,12 +5,18 @@ import matplotlib.pyplot as plt
 
 st.title('Bienvenido a PokMed')
 mensajeBienvenida=st.empty()
+nombreIntro=st.empty()
+contraIntro=st.empty()
 st.subheader('Vamos a verificar como se encuentra tu insulina.')
-mensajeBienvenida.write("'Pero primero, por favor dinos quien eres:'")
-n = st.text_input("Usuario:")
-contra = st.text_input("Contraseña:")
+mensajeBienvenida.write("Pero primero, por favor dinos quien eres:")
+
+
+n = nombreIntro.text_input("Usuario")
+contra = contraIntro.text_input("Usuario")
 if n == "Jose Pablo" and contra == "222555":
     mensajeBienvenida.empty()
+    nombreIntro.empty()
+    contraIntro.empty()
     st.subheader(f'Bienvenido {n}')
 
     host = "autorack.proxy.rlwy.net"
@@ -127,8 +133,6 @@ if n == "Jose Pablo" and contra == "222555":
 
     # Mostrar la gráfica en Streamlit
     st.pyplot(fig)
-
-
 
 
 
