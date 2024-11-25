@@ -5,9 +5,10 @@ import matplotlib.pyplot as plt
 
 st.title('Bienvenido a PokMed')
 mensajeBienvenida=st.empty()
+mensajeB2=st.empty()
 nombreIntro=st.empty()
 contraIntro=st.empty()
-st.subheader('Vamos a verificar como se encuentra tu insulina.')
+mensajeB2.subheader('Vamos a verificar como se encuentra tu insulina.')
 mensajeBienvenida.write("Pero primero, por favor dinos quien eres:")
 
 
@@ -133,6 +134,5 @@ if n == "Jose Pablo" and contra == "222555":
 
     # Mostrar la gráfica en Streamlit
     st.pyplot(fig)
-
 
 
