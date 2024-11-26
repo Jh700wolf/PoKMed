@@ -167,7 +167,7 @@ if n == "Jose Pablo" and contra == "222555":
     st.pyplot(fig)
 
     
-    if df['valor'].iloc[-1] > 29:
+    if df['valor'].iloc[-1] > 20:
         st.write("Tu insulina esta en malas condiciones en este momento!")
 
 
