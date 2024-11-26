@@ -78,7 +78,7 @@ if n == "Jose Pablo" and contra == "222555":
     if 'timestamp' in df.columns:
         df['timestamp'] = pd.to_datetime(df['timestamp'])
         df = df.sort_values(by='timestamp', ascending=True)
-
+    # Cargar datos de movimiento
     df2 = fetch_data_mov(host, user, password, database)
     if 'timestamp' in df2.columns:
         df2['timestamp'] = pd.to_datetime(df2['timestamp'])
@@ -165,5 +165,9 @@ if n == "Jose Pablo" and contra == "222555":
 
     # Mostrar la gráfica en Streamlit
     st.pyplot(fig)
+
+    
+    if df['valor'].iloc[-1] > 29:
+        st.write("Tu insulina esta en malas condiciones en este momento!")
 
 
