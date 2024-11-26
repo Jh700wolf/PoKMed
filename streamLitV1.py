@@ -84,11 +84,6 @@ if n == "Jose Pablo" and contra == "222555":
         df2['timestamp'] = pd.to_datetime(df2['timestamp'])
         df2 = df2.sort_values(by='timestamp', ascending=True)
 
-    st.subheader("Tabla de Temperaturas")
-    st.dataframe(df)
-    st.subheader("Tabla de Movimiento")
-    st.dataframe(df2)
-
     if df['valor'].iloc[-1] > 26:
         st.subheader("Tu insulina esta en malas condiciones en este momento! La temperatura supera los 26°")
     elif df['valor'].iloc[-1] < 2:
@@ -173,6 +168,11 @@ if n == "Jose Pablo" and contra == "222555":
 
     # Mostrar la gráfica en Streamlit
     st.pyplot(fig)
+
+    st.subheader("Tabla de Temperaturas")
+    st.dataframe(df)
+    st.subheader("Tabla de Movimiento")
+    st.dataframe(df2)
 
     
 
