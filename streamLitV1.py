@@ -89,7 +89,7 @@ if n == "Jose Pablo" and contra == "222555":
     st.subheader("Tabla de Movimiento")
     st.dataframe(df2)
 
-    if df['valor'].iloc[-1] > 30:
+    if df['valor'].iloc[-1] > 26:
         st.write("Tu insulina esta en malas condiciones en este momento!")
 
     # Crear la gráfica con puntos y colores personalizados
