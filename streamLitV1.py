@@ -198,10 +198,8 @@ if n == "Jose Pablo" and contra == "222555":
         )
 
         # Determinar el color de la línea según el punto al que conecta
-        if df2['valor'].iloc[i + 1] > 26:
+        if df2['valor'].iloc[i + 1] > 2:
             line_color = '#FF7F3E'
-        elif df2['valor'].iloc[i + 1] < 2:
-            line_color = '#4335A7'
         else:
             line_color = '#80C4E9'
 
@@ -214,10 +212,8 @@ if n == "Jose Pablo" and contra == "222555":
         )
 
     # Graficar el último punto
-    if df2['valor'].iloc[-1] > 29:
+    if df2['valor'].iloc[-1] > 2:
         last_color = '#FF7F3E'
-    elif df2['valor'].iloc[-1] < 26:
-        last_color = '#4335A7'
     else:
         last_color = '#80C4E9'
 
@@ -236,7 +232,7 @@ if n == "Jose Pablo" and contra == "222555":
     # Lo de abajo en teoria amplia el alcance de la grafica en x, pero hasta ahora no ha hecho falta.
     # ax.set_xlim(df['timestamp'].min() - pd.Timedelta(seconds=5), df['timestamp'].max() + pd.Timedelta(seconds=5))  # Espacio horizontal
     # Ajustes del gráfico
-    ax2.set_title('Temperatura de la insulina', color='white')  # Título en blanco para destacar
+    ax2.set_title('Movimiento de la insulina', color='white')  # Título en blanco para destacar
     ax2.set_xlabel('Tiempo', color='white')  # Etiqueta del eje x en blanco
     ax2.set_ylabel('Temperatura (°C)', color='white')  # Etiqueta del eje y en blanco
     plt.xticks(rotation=45, color='white')  # Rotar etiquetas del eje x y ponerlas en blanco
