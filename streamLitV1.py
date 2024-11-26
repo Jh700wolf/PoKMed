@@ -29,7 +29,7 @@ if n == "Jose Pablo" and contra == "222555":
 
     # Conectar a la base de datos con pymysql
     # @st.cache_data(ttl=600)
-    def fetch_data(host, user, password, database):
+    def fetch_data(host, user, password, database, sensor):
         try:
             # Conexión a la base de datos
             connection = pymysql.connect(
@@ -40,7 +40,7 @@ if n == "Jose Pablo" and contra == "222555":
                 port=12903
             )
             cursor = connection.cursor()
-            cursor.execute("SELECT * FROM medicinav1 where nombre_sensor in ('DHT22','MPU6050')")
+            cursor.execute(f"SELECT * FROM medicinav1 where nombre_sensor in ({sensor})")
             data = cursor.fetchall()
             columns = [desc[0] for desc in cursor.description]  # Obtener los nombres de las columnas
             connection.close()
@@ -51,7 +51,7 @@ if n == "Jose Pablo" and contra == "222555":
 
 
     # Cargar datos
-    df = fetch_data(host, user, password, database)
+    df = fetch_data(host, user, password, database, 'DHT22')
     if 'timestamp' in df.columns:
         df['timestamp'] = pd.to_datetime(df['timestamp'])
         df = df.sort_values(by='timestamp', ascending=True)
