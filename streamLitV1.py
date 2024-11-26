@@ -49,15 +49,45 @@ if n == "Jose Pablo" and contra == "222555":
             st.error(f"Error al conectar a la base de datos: {e}")
             return pd.DataFrame()
 
+    # Conectar a la base de datos con pymysql
+    # @st.cache_data(ttl=600)
+    def fetch_data_mov(host, user, password, database):
+        try:
+            # Conexión a la base de datos
+            connection = pymysql.connect(
+                host=host,
+                user=user,
+                password=password,
+                database=database,
+                port=12903
+            )
+            cursor = connection.cursor()
+            cursor.execute(f"SELECT * FROM medicinav1 where nombre_sensor in ('MPU6050')")
+            data = cursor.fetchall()
+            columns = [desc[0] for desc in cursor.description]  # Obtener los nombres de las columnas
+            connection.close()
+            return pd.DataFrame(data, columns=columns)
+        except pymysql.MySQLError as e:
+            st.error(f"Error al conectar a la base de datos: {e}")
+            return pd.DataFrame()
 
-    # Cargar datos
+
+
+    # Cargar datos de temperatura
     df = fetch_data(host, user, password, database)
     if 'timestamp' in df.columns:
         df['timestamp'] = pd.to_datetime(df['timestamp'])
         df = df.sort_values(by='timestamp', ascending=True)
 
-    st.subheader("Tabla de datos")
+    df2 = fetch_data_mov(host, user, password, database)
+    if 'timestamp' in df2.columns:
+        df2['timestamp'] = pd.to_datetime(df2['timestamp'])
+        df2 = df2.sort_values(by='timestamp', ascending=True)
+
+    st.subheader("Tabla de Temperaturas")
     st.dataframe(df)
+    st.subheader("Tabla de Movimiento")
+    st.dataframe(df2)
 
     # Crear la gráfica con puntos y colores personalizados
     fig, ax = plt.subplots()
