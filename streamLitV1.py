@@ -168,7 +168,7 @@ if n == "Jose Pablo" and contra == "222555":
 
     # Mostrar la gráfica en Streamlit
     st.pyplot(fig)
-    col1, col2=st.columns()
+    col1, col2=st.columns(2)
     with col1:
         st.subheader("Tabla de Temperaturas")
         st.dataframe(df)
