@@ -41,10 +41,10 @@ if n == "Jose Pablo" and contra == "222555":
             )
             cursor = connection.cursor()
             cursor.execute("SELECT * FROM medicinav1 where nombre_sensor='DHT22'")
-            cursor.execute("SELECT * FROM medicinav1 where nombre_sensor='MPU60502")
             data = cursor.fetchall()
             columns = [desc[0] for desc in cursor.description]  # Obtener los nombres de las columnas
             connection.close()
+            
             return pd.DataFrame(data, columns=columns)
         except pymysql.MySQLError as e:
             st.error(f"Error al conectar a la base de datos: {e}")
