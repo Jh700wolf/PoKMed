@@ -40,11 +40,12 @@ if n == "Jose Pablo" and contra == "222555":
                 port=12903
             )
             cursor = connection.cursor()
-            cursor.execute("SELECT * FROM medicinav1 where nombre_sensor='DHT22'")
+            placeholders = ', '.join(['%s'] * len(sensor_names))
+            query = f"SELECT * FROM medicinav1 WHERE nombre_sensor IN ({placeholders})
+            cursor.execute(query, sensor_names)
             data = cursor.fetchall()
             columns = [desc[0] for desc in cursor.description]  # Obtener los nombres de las columnas
             connection.close()
-            
             return pd.DataFrame(data, columns=columns)
         except pymysql.MySQLError as e:
             st.error(f"Error al conectar a la base de datos: {e}")
