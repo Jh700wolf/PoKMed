@@ -91,7 +91,7 @@ if n == "Jose Pablo" and contra == "222555":
 
     if df['valor'].iloc[-1] > 26:
         st.subheader("Tu insulina esta en malas condiciones en este momento! La temperatura supera los 26°")
-    else if df['valor'].iloc[-1] < 2:
+    elif df['valor'].iloc[-1] < 2:
         st.subheader("Tu insulina esta en malas condiciones en este momento! La temperatura esta debajo de 2°")
     else:
         st.subheader("Todo parece bien con tu insulina!")
