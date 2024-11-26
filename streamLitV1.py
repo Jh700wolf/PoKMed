@@ -89,9 +89,9 @@ if n == "Jose Pablo" and contra == "222555":
     st.subheader("Tabla de Movimiento")
     st.dataframe(df2)
 
-    if df['valor'].iloc[-1] > 26:
+    if df['valor'].iloc[-1] > 36:
         st.subheader("Tu insulina esta en malas condiciones en este momento! La temperatura supera los 26°")
-    elif df['valor'].iloc[-1] < 2:
+    elif df['valor'].iloc[-1] < 31:
         st.subheader("Tu insulina esta en malas condiciones en este momento! La temperatura esta debajo de 2°")
     else:
         st.subheader("Todo parece bien con tu insulina!")
